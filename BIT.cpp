@@ -95,5 +95,13 @@ void range_update(int i, int j, ll v)	{
     update(B2, i, v * (i - 1));
     update(B2, j + 1, -v * j);
 }
+void convert(ll arr[], ll n)
+{
+    ll temp[n];
+    for (ll i=0; i<n; i++)
+        temp[i] = arr[i];
+    sort(temp, temp+n);
+    for (ll i=0; i<n; i++) arr[i] = lower_bound(temp, temp+n, arr[i]) - temp + 1;
+}
         //memset(B1, 0, (n+1) * sizeof(ll));
         //memset(B2, 0, (n+1) * sizeof(ll));
