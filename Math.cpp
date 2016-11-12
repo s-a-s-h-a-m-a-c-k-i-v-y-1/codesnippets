@@ -105,7 +105,7 @@ ll choose(ll n, ll r)
 }
 /*
  //in int main
- //choose(n , r) = nCr
+ choose(n , r) = nCr
  fact[0] = 1;
  for (ll i = 1; i < 200010; ++i)
  {
@@ -154,8 +154,6 @@ ll C(ll n, ll r)
         f[i]= (f[i-1]*i) % mod;
     return (f[n]*((InverseEuler(f[r], mod) * InverseEuler(f[n-r], mod)) % mod)) % mod;
 }
-inline ll sum(ll n) { return mul(mul(n, n + 1), (mod + 1) / 2); }
-inline ll sum(ll lf, ll rg) { return sub(sum(rg), sum(lf - 1)); }
 bool miillerTest(ll d, ll n)
 {
     ll a = 2 + rand() % (n - 4);
@@ -183,8 +181,6 @@ bool isPrime(ll n, ll iterations)
             return false;
     return true;
 }
-
-
 ll PollardRho(ll n)
 {
     srand(time(NULL));
